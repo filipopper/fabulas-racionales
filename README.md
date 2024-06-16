@@ -7,7 +7,7 @@
 - 1 tablero
 - 4 fichas (1 de cada color)
 - 1 dado
-- Tarjetas de desafío de fracciones
+- Cartas de desafío de fracciones
 
 ---
 
