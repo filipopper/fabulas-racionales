@@ -65,14 +65,21 @@ function generateSumChallenge() {
 
 // Función para generar un desafío de resta de fracciones
 function generateSubtractionChallenge() {
-  let num1 = getRandomInt(1, 10);
-  let den1 = getRandomInt(1, 10);
-  let num2 = getRandomInt(1, 10);
-  let den2 = getRandomInt(1, 10);
+  let num1, den1, num2, den2;
+
+  // Generar las fracciones asegurando que num1/den1 sea mayor que num2/den2
+  do {
+    num1 = getRandomInt(1, 10);
+    den1 = getRandomInt(2, 10); // den1 >= 2 para evitar denominador 1
+    num2 = getRandomInt(1, 10);
+    den2 = getRandomInt(2, 10); // den2 >= 2 para evitar denominador 1
+  } while (num1 / den1 <= num2 / den2); // Asegurar que num1/den1 > num2/den2
+
+  // Calcular la resta de fracciones
   let commonDenominator = den1 * den2;
   let differenceNumerator = num1 * den2 - num2 * den1;
 
-  // Calcular el máximo común divisor (MCD) para simplificar la fracción
+  // Simplificar la fracción resultado usando el máximo común divisor (MCD)
   let gcdValue = gcd(differenceNumerator, commonDenominator);
   let simplifiedNumerator = differenceNumerator / gcdValue;
   let simplifiedDenominator = commonDenominator / gcdValue;
