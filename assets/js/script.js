@@ -79,6 +79,11 @@ function generateSubtractionChallenge() {
   let commonDenominator = den1 * den2;
   let differenceNumerator = num1 * den2 - num2 * den1;
 
+  // Ajustar si el numerador es negativo para mantener la fracción positiva
+  if (differenceNumerator < 0) {
+    differenceNumerator = -differenceNumerator;
+  }
+
   // Simplificar la fracción resultado usando el máximo común divisor (MCD)
   let gcdValue = gcd(differenceNumerator, commonDenominator);
   let simplifiedNumerator = differenceNumerator / gcdValue;
