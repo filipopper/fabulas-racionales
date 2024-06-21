@@ -12,18 +12,15 @@
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.png" />
   </head>
   <body>
-    <div class="container">
-      <h1>Fábulas Racionales - Cartas de Desafío</h1>
-      <div class="deck-container">
-        <div class="deck" id="simplificationDeck">Simplificación</div>
-        <div class="deck" id="sumDeck">Suma</div>
-        <div class="deck" id="subtractionDeck">Resta</div>
-        <div class="deck" id="multiplicationDeck">Multiplicación</div>
-      </div>
-      <div id="cardContainer" class="card">
-        <p id="cardText">Selecciona un mazo para obtener una carta</p>
-      </div>
+    <div class="navbar">
+      <a href="#" onclick="loadMode('casual')">Modo Casual</a>
+      <a href="#" onclick="loadMode('aleatorio')">Modo Aleatorio</a>
     </div>
+
+    <div id="app" class="container">
+      <!-- Aquí se renderizarán las vistas -->
+    </div>
+
     <script src="assets/js/script.js"></script>
   </body>
 </html>
